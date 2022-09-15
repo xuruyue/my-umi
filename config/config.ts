@@ -2,6 +2,7 @@ import { defineConfig } from '@umijs/max';
 import routers from './router'
 
 export default defineConfig({
+  dva: {},
   antd: {},
   access: {},
   model: {},
@@ -21,5 +22,12 @@ export default defineConfig({
   },
   routes: routers,
   npmClient: 'npm',
+  proxy: {
+    '/api': {
+      'target': 'http://public-api-v1.aspirantzhang.com',
+      'changeOrigin': true,
+      'pathRewrite': { '^/api' : '' },
+    },
+  },
 });
 

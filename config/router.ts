@@ -26,4 +26,9 @@ export default [
         path: '/table',
         component: './Table',
     },
+    {
+        name: ' 用户信息',
+        path: '/users',
+        component: './Users',
+    }
 ]
